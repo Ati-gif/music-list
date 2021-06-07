@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button } from "semantic-ui-react";
+import { Table, Button, Rating } from "semantic-ui-react";
 
 const Music = ({ title, artist, remove, id, editClicked }) => (
   <Table.Row>
@@ -17,6 +17,7 @@ const Music = ({ title, artist, remove, id, editClicked }) => (
     <Button icon='pause' />
     <Button icon='shuffle' />
   </Button.Group>
+  <Rating icon='star' defaultRating={3} maxRating={4} />
     </Table.Cell>
   </Table.Row>
 );
