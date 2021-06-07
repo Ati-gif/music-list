@@ -13,7 +13,6 @@ const Musics = ({ musics, remove, editClicked }) => (
     </Table.Header>
     <Table.Body>
       {musics.map((music) => (
-  
         <Music
           editClicked={editClicked}
           remove={remove}

@@ -9,7 +9,7 @@ export default class MusicForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state); 
+    console.log(this.state);
     if (this.props.isEditing) {
       this.props.edit(this.state);
     } else {
@@ -50,7 +50,7 @@ export default class MusicForm extends React.Component {
             value={this.state.artist}
             onChange={this.handleChange}
           />
-          <Form.Button >Submit</Form.Button>
+          <Form.Button>Submit</Form.Button>
         </Form.Group>
       </Form>
     );
