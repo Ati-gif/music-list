@@ -12,6 +12,11 @@ const Music = ({ title, artist, remove, id, editClicked }) => (
       <Button onClick={() => editClicked(id)}  button basic color='teal' content='teal'>
         Edit
       </Button>
+      <Button.Group>
+    <Button icon='play' />
+    <Button icon='pause' />
+    <Button icon='shuffle' />
+  </Button.Group>
     </Table.Cell>
   </Table.Row>
 );
