@@ -50,7 +50,7 @@ export default class MusicForm extends React.Component {
             value={this.state.artist}
             onChange={this.handleChange}
           />
-          <Form.Button button basic color="green">Submit</Form.Button>
+          <Form.Button button basic color="blue">Submit</Form.Button>
         </Form.Group>
       </Form>
     );

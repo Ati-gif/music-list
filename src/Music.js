@@ -13,8 +13,8 @@ const Music = ({ title, artist, remove, id, editClicked }) => (
         onClick={() => editClicked(id)}
         button
         basic
-        color="teal"
-        content="teal"
+        color="green"
+        content="green"
       >
         Edit
       </Button>
