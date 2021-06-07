@@ -24,6 +24,7 @@ const Music = ({ title, artist, remove, id, editClicked }) => (
         <Button icon="shuffle" />
       </Button.Group>
       <Rating icon="star" defaultRating={3} maxRating={4} />
+      
     </Table.Cell>
   </Table.Row>
 );
