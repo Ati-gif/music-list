@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Container, Header, Segment, Button, Icon } from "semantic-ui-react";
+import { Header, Segment, Button, Icon } from "semantic-ui-react";
 import Musics from "./Musics";
 import MusicForm from "./MusicForm";
+import styled, { keyframes } from "styled-components";
 
 
 class App extends React.Component {
@@ -66,9 +67,19 @@ class App extends React.Component {
     const music = isEditing ? this.getMusic() : null;
     console.log(music);
     return (
-      <Container style={{ paddingTop: "20px" }}>
-        <Header as="h1">Music List</Header>
-        <Segment>
+      <AppContainer style={{ paddingTop: "20px" }}>
+        <Header as="h1">Music List<Truncated>
+          <Star>
+            <Icon name="star" />
+          </Star>
+          <Star>
+            <Icon name="star" />
+          </Star>
+          <Star>
+            <Icon name="star" />
+          </Star>
+        </Truncated> </Header>
+        <Segment as={Transparent}>
           <Button icon color="blue" onClick={this.toggleForm}>
             <Icon name={showForm ? "angle double up" : "angle double down"} />
           </Button>
@@ -87,9 +98,41 @@ class App extends React.Component {
           editClicked={this.editClickHandler}
           musics={musics}
         />
-      </Container>
+      </AppContainer>
     );
   }
 }
+
+const AppContainer = styled.div`
+  background: linear-gradient(to bottom right, #97468c, #468c97);
+  min-height: 100vh;
+`;
+
+const Transparent = styled.div`
+  background: transparent !important;
+`;
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  } 
+  to{
+    transform: rotate(360deg);
+  }
+ `;
+const Star = styled.div`
+  display: inline-block;
+  color: #8acaba;
+  text-shadow: 1px 2px 1px blue;
+  animation: ${rotate360} 2s linear infinite;
+  `;
+  const Truncated = styled.div`
+  white-space: ${(props) => (props.wrap ? "wrap" : "nowrap")};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  -webkit-line-clamp: 2 !important; /* number of lines to show */
+  -webkit-box-orient: vertical !important;
+`;
 
 export default App;

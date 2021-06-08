@@ -32,9 +32,9 @@ export default class MusicForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} >
         <Form.Group widths="equal">
-          <Form.Input
+          <Form.Input 
             fluid
             label="Song Title Here"
             placeholder="enter song title"
@@ -50,8 +50,8 @@ export default class MusicForm extends React.Component {
             value={this.state.artist}
             onChange={this.handleChange}
           />
-          <Form.Button button basic color="blue">Submit</Form.Button>
         </Form.Group>
+        <Form.Button color='blue'>Submit</Form.Button>
       </Form>
     );
   }
